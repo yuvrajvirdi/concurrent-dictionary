@@ -43,7 +43,7 @@ public:
         return false;
     }
 
-    cool contains(const Key& key) const {
+    bool contains(const Key& key) const {
         size_t bucket = get_bucket(key);
         unique_lock<mutex> lock(buckets[bucket].mutex);
         const auto& bucket_map = buckets[bucket].map;
